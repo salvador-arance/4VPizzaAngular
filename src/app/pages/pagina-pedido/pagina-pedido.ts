@@ -17,7 +17,7 @@ export class PaginaPedido {
   constructor(protected pedidoService: PedidoService, private router: Router) {}
 
   protected confirmarPago(mensajeEntrega: string) {
-    this.pedidoService.mensajeGracias.set('¡Gracias por tu pedido!' + mensajeEntrega);
+    this.pedidoService.mensajeGracias.set('¡Gracias por tu pedido! ' + mensajeEntrega);
     this.limpiarPedido();
   }
 
