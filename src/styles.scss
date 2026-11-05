@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+$primary: #9d0208;
+$secondary: #386641;
+$warning: #ffb703;
+$body-bg: #fdf8f0;
+$border-radius: 1rem;
+$card-cap-bg: #ffe8cc;
+
+@import "bootstrap/scss/bootstrap";
