@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   imports: [],
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './logo.scss',
   templateUrl: './logo.html',
 })
-export class Logo {}
+export class Logo {
+  readonly tamano = input(40);
+}
