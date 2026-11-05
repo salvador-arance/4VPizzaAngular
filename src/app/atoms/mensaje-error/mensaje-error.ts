@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   imports: [],
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './mensaje-error.scss',
   templateUrl: './mensaje-error.html',
 })
-export class MensajeError {}
+export class MensajeError {
+  readonly texto = input.required<string>();
+}
