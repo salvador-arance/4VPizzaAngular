@@ -1,1 +1,4 @@
-<p>linea-pedido works!</p>
+<div class="d-flex justify-content-between">
+  <span><strong>{{ cantidad() }} x</strong> {{ nombre() }}</span>
+  <app-precio [valor]="subtotal()" />
+</div>

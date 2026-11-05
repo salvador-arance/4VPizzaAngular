@@ -1,1 +1,5 @@
-<p>buscador works!</p>
+<div class="input-group">
+  <span class="input-group-text">🔍</span>
+  <input type="search" class="form-control" placeholder="Buscar por ingrediente"
+    aria-label="Buscar por ingrediente" [formControl]="ingrediente" (input)="lanzarBusqueda()">
+</div>

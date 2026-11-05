@@ -1,1 +1,12 @@
 <p>selector-cantidad works!</p>
+<form [formGroup]="cantidadForm" (ngSubmit)="anadirAlPedido()">
+  <p class="small mb-1">Cantidad</p>
+  <div class="input-group">
+    <input type="number" class="form-control" formControlName="cantidad" aria-label="Cantidad">
+    <button type="submit" class="btn btn-primary" aria-label="Añadir al pedido">🛒</button>
+  </div>
+
+  @if (cantidad?.invalid && (cantidad?.dirty || cantidad?.touched)) {
+    <app-mensaje-error texto="Pon una cantidad entre 1 y 99" />
+  }
+</form>
