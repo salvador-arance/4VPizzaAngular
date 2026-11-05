@@ -6,4 +6,4 @@ $body-bg: #fdf8f0;
 $border-radius: 1rem;
 $card-cap-bg: #ffe8cc;
 
-@import "bootstrap/scss/bootstrap";
+@use "bootstrap/scss/bootstrap";
