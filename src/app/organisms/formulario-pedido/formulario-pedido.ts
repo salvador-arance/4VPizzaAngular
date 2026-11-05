@@ -18,7 +18,7 @@ export class FormularioPedido {
     direccion: new FormControl('', [Validators.required, Validators.pattern('^[\\s\\S]{10,}$')]),
     metodoPago: new FormControl('tarjeta'),
     tarjeta: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{16}$')]),
-    movil: new FormControl('^[0-9]{9}$'),
+    movil: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{9}$')]),
   })
 
   protected get hora() {
