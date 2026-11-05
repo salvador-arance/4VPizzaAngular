@@ -1,1 +1,22 @@
-<p>pizza-card works!</p>
+<div class="card h-100 shadow-sm tarjeta">
+  <div class="card-header d-flex justify-content-between align-items-center gap-2">
+    <h2 class="h5 mb-0">{{ nombre() }}</h2>
+    <span class="badge text-bg-warning fs-6"><app-precio [valor]="precio()" /></span>
+  </div>
+
+  <div class="ratio ratio-4x3">
+    <img class="object-fit-cover" [src]="imagen()" [alt]="'Foto de la pizza ' + nombre()">
+  </div>
+
+  <div class="card-body">
+    <ul class="list-unstyled d-flex flex-wrap gap-1 mb-0">
+      @for (ingrediente of ingredientes(); track $index) {
+        <li><app-ingrediente [nombre]="ingrediente" /></li>
+      }
+    </ul>
+  </div>
+
+  <div class="card-footer bg-transparent border-0 pt-0">
+    <app-selector-cantidad (anadir)="anadirAlPedido($event)" />
+  </div>
+</div>

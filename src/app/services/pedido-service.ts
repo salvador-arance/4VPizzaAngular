@@ -25,7 +25,7 @@ export class PedidoService {
         return total;
     })
 
-    añadirPizza(nombre: string, precio: number, cantidad: number) {
+    anadirPizza(nombre: string, precio: number, cantidad: number) {
         const lineas = this.lineas();
 
         // como se parece esto a linq!

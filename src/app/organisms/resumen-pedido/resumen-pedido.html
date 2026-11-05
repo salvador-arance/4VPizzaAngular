@@ -1,1 +1,18 @@
-<p>resumen-pedido works!</p>
+<div class="card shadow-sm">
+  <div class="card-header">
+    <h2 class="h5 mb-0">Tu pedido</h2>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    @for (linea of pedidoService.lineas(); track $index) {
+      <li class="list-group-item">
+        <app-linea-pedido [nombre]="linea.nombre" [cantidad]="linea.cantidad" [subtotal]="linea.subtotal()" />
+      </li>
+    }
+  </ul>
+
+  <div class="card-footer d-flex justify-content-between fw-bold fs-5">
+    <span>Total</span>
+    <app-precio [valor]="pedidoService.importeTotal()" />
+  </div>
+</div>

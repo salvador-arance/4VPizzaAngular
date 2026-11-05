@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { Logo } from '../../atoms/logo/logo';
 
 @Component({
-  imports: [],
+  imports: [Logo],
   selector: 'app-footer',
   styleUrl: './footer.scss',
   templateUrl: './footer.html',
 })
-export class Footer {}
+export class Footer {
+  protected readonly anio = new Date().getFullYear();
+}

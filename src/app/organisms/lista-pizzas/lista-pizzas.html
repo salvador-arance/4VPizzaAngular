@@ -1,1 +1,12 @@
-<p>lista-pizzas works!</p>
+<div class="row g-4">
+  @for (pizza of pizzasFiltradas(); track $index) {
+    <div class="col-12 col-md-6 col-lg-3">
+      <app-pizza-card [nombre]="pizza.nombre" [precio]="pizza.precio" [imagen]="pizza.imagen"
+        [ingredientes]="pizza.ingredientes" />
+    </div>
+  }
+</div>
+
+@if (pizzasFiltradas().length === 0) {
+  <div class="alert alert-warning text-center">No hay ninguna pizza con «{{ filtro() }}»</div>
+}
