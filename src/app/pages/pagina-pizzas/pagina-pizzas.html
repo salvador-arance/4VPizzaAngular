@@ -1,1 +1,13 @@
-<p>pagina-pizzas works!</p>
+<div class="d-flex flex-column min-vh-100">
+  <app-navbar class="sticky-top" [conBuscador]="true" (buscar)="filtrarPizzas($event)" />
+  <app-header titulo="4V PIZZA" subtitulo="Pizzas hechas al momento, directas a tu puerta" />
+
+  <main class="container py-5 flex-grow-1">
+    @if (pedidoService.mensajeGracias()) {
+      <div class="alert alert-success text-center fs-5">{{ pedidoService.mensajeGracias() }}</div>
+    }
+    <app-lista-pizzas [filtro]="filtro()" />
+  </main>
+
+  <app-footer />
+</div>

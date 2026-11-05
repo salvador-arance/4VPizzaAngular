@@ -1,1 +1,24 @@
-<p>pagina-pedido works!</p>
+<div class="d-flex flex-column min-vh-100">
+  <app-navbar class="sticky-top" />
+  <app-header titulo="Tu pedido" subtitulo="Revisa tus pizzas y dinos dónde llevarlas" />
+
+  <main class="container py-5 flex-grow-1">
+    @if (pedidoService.totalPizzas() > 0) {
+      <div class="row g-4">
+        <div class="col-12 col-lg-5">
+          <app-resumen-pedido />
+        </div>
+        <div class="col-12 col-lg-7">
+          <app-formulario-pedido (pagar)="confirmarPago($event)" (limpiar)="limpiarPedido()" />
+        </div>
+      </div>
+    } @else {
+      <div class="alert alert-info text-center">
+        Todavía no has añadido ninguna pizza.
+        <a class="alert-link" routerLink="/pizzas">Ver las pizzas</a>
+      </div>
+    }
+  </main>
+
+  <app-footer />
+</div>
